@@ -71,7 +71,9 @@ end
 
 function love.update(dt)
   --Lurker (Realtime Code Changing)
-  require('libs.lurker'):update(dt)  
+  
+  --Temporarily removed due to perfomrance issues
+  --require('libs.lurker'):update(dt)  
   SceneManager.update(dt)
   Fader.update(dt)
   flux.update(dt)
@@ -83,6 +85,8 @@ function love.draw()
   SceneManager.draw()
   Fader.draw()
   Console:draw()
+  
+  graphics.print("FPS: "..love.timer.getFPS(), 0, 0)
 end
 
 

@@ -60,8 +60,10 @@ function Window:update(dt)
   end
   -- Update clouds
   for i, cloud in ipairs(clouds) do
-    cloud.x = cloud.x - cloud.speed * dt
-    if cloud.x + cloud.w < self.x then table.remove(clouds, i) end
+    if TimeBox:isTimeAdvancing() then
+      cloud.x = cloud.x - cloud.speed * dt
+      if cloud.x + cloud.w < self.x then table.remove(clouds, i) end
+    end
   end
 end
 

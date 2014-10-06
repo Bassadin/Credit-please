@@ -43,6 +43,8 @@ function MainMenu:draw()
   local imgw, imgh = gameLogo:getWidth() * SCALEX, gameLogo:getHeight() * SCALEY
   graphics.draw(gameLogo, WIDTH / 2 - imgw / 2, HEIGHT / 2 - imgh / 2 - 64, 0, SCALEX, SCALEY)
   buttons:draw()
+  
+  graphics.print("FPS: "..love.timer.getFPS(), 0, 0)
 end
 
 
